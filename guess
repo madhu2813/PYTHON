@@ -1,0 +1,40 @@
+import time
+import random
+name1=input("enter the name of player 1")
+name2=input("enter the name of player 2")
+print("hello {} and {}".format(name1,name2))
+print("computer has fixed five random numbers in mind")
+print ("each has three turns to guess")
+num=[]
+while(len(num)!=5):
+    a=random.randint(1,10)
+    if(a not in num):
+        num.append(a)
+
+
+player1=[]
+player2=[]
+for i in range(3):
+    print("{} enter your guess".format(name1))
+    ans=int(input())
+    if(ans not in player1 or ans not in player2):
+        if(ans in num):
+            s1=s1+1
+            print("correct")
+        else:
+            print("wrong")
+    else:
+        print("num already chosen by other player")
+        
+for i in range(3):
+    print("{} enter your guess".format(name2))
+    ans1=int(input())
+    if(ans1 not in player1 or ans1 not in player2):
+        if(ans in num):
+            s2=s2+1
+            print("correct")
+        else:
+             print("wrong")
+    else:
+        print("num already chosen by other player")
+   
